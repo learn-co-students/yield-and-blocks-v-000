@@ -1,14 +1,12 @@
-#def hello_t(arr)
-  #arr.each do |el|
-    #puts "Hi, #{el}" if el[0] == 'T'
-  #end
-#end
-
 def hello_t(arr)
-  i = 0
-  while i < arr.length
-    yield arr[i]
-    i += 1
+  if block_given?
+    i = 0
+    while i < arr.length
+      yield arr[i]
+      i += 1
+    end
+  else
+    puts 'Hey! No block was given!'
   end
   arr
 end
