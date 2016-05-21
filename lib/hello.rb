@@ -12,7 +12,7 @@ def hello_t(array)
   end
 end
 
-# call your method here with the yield method!
+# call your method here with the yield keyword!
 hello_t(["Tim", "Tom", "Jim"]) do |name|
     if name.start_with?("T")
         puts "Hi, #{name}"
