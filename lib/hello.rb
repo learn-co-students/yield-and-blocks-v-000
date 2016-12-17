@@ -5,12 +5,14 @@ def hello_t(array)
     yield array[i]
         i = i + 1
   end
+  array
 end
 #lib/hello.rb
 #def hello_t(array)
   #binding.pry
 # call your method here!
-  hello_t(array) do |name|
+array = ["Tim", "Tom", "Jim"]
+  hello_t(["Tim", "Tom", "Jo"]) do |name|
   #binding.pry
   if name.start_with?("T")
     puts "Hi, #{name}"
