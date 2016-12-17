@@ -7,13 +7,13 @@ def hello_t(array)
   end
 end
 #lib/hello.rb
-def hello_t(array)
+#def hello_t(array)
   #binding.pry
 # call your method here!
-  array.each do |name|
+  hello_t(array) do |name|
   #binding.pry
   if name.start_with?("T")
     puts "Hi, #{name}"
   end
 end
-end
+#end
