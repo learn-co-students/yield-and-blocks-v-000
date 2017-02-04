@@ -2,12 +2,14 @@ require "spec_helper"
 
 describe "#hello_t" do
   let (:names) { ["Tim", "Tom", "Jim"] }
+  let (:array) { [] }
   it "only passes names that start with 'T' to the block" do
     expect{hello_t(names){|name| puts "Hi, #{name}" if name.start_with?("T")}}.to output("Hi, Tim\nHi, Tom\n").to_stdout
   end
 
   it "returns an array with only names that start with 'T'" do
-    expect(hello_t(names) {|name| puts "Hi, #{name}" if name.start_with?('T')}).to eq(names)
+    hello_t(names) {|name| array << name if name.start_with?('T')}
+    expect(array).to eq(["Tim", "Tom"])
   end
 
   it "is case insensitive" do
