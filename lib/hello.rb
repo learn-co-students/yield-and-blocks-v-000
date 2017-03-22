@@ -1,18 +1,16 @@
 def hello_t(array)
-  if block_given?
-    i = 0
-    while i < array.length
-      yield(array[i])
-      i = i + 1
-    end
-    array
-  else
-    puts "Hey! No block was given!"
-  end
+   t_array = []
+   index = 0
+   while index < array.length
+     if array[index].start_with?("T") || array[index].start_with?("t")
+       t_array << array[index]
+       yield(array[index])
+     end
+     index += 1
+   end
+   t_array
 end
 
 hello_t(["Tim", "Tom", "Jim"]) do |name|
-    if name.start_with?("T")
-        puts "Hi, #{name}"
-    end
+    puts "Hi, #{name}"
 end
