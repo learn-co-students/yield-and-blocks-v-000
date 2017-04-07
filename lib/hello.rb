@@ -1,15 +1,15 @@
 def hello_t(array)
-	newArray = []
+	result = []
 	if block_given?
 		i = 0
 		while i < array.length
-			newArray << array[i] if yield(array[i])
+			result << array[i] if yield(array[i])
 			i += 1
 		end
 	else
 		puts "No block given!"
 	end
-	newArray
+	result
 end
 
 # call your method here!
