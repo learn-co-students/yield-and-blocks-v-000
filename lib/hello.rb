@@ -3,7 +3,10 @@ def hello_t(array)
 	if block_given?
 		i = 0
 		while i < array.length
-			result << array[i] if yield(array[i])
+			if array[i].start_with?("T") || array[i].start_with?("t")
+				yield(array[i])
+				result << array[i]
+			end
 			i += 1
 		end
 	else
