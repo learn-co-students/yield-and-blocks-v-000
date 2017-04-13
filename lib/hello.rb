@@ -4,9 +4,6 @@ def hello_t(array)
             if name.start_with?("T", "t")
                 names.push(name)
                 puts "Hi, #{name}"
-            # else name.start_with?("t")
-            #     names.push(name)
-            #     puts "Hi, #{name}"
             end
         end
   names
