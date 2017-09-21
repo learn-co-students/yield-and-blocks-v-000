@@ -1,18 +1,17 @@
 def hello_t(array)
   if block_given?
-      i = 0
-
-      while i < array.length
-        yield array[i]
-        i = i + 1
-      end
-
+    i = 0
+ 
+    while i < array.length
+      yield(array[i])
+      i = i + 1
+    end
+ 
     array
-
-  else 
-    puts' "Hey! No block was given!"
+  else
+    puts "Hey! No block was given!"
   end
-end    
+end
 
 # call your method here!
 hello_t(["Tim", "Tom", "Jim"]) do |name|
