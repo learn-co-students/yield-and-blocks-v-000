@@ -1,8 +1,9 @@
 def hello_t(array)
-  if blocks_given?
+  if block_given?
     i = 0
+
     while i < array.length
-      yield(array[i])
+      yield array[i]
       i = i+ 1
     end
     array
@@ -12,8 +13,9 @@ def hello_t(array)
 end
 
 # call your method here!
+
 hello_t(["Tim", "Tom", "Jim"]) do |name|
-  if name.start.with?("T")
+  if name.start_with?("T")
     puts "Hi, #{name}"
   end
 end
