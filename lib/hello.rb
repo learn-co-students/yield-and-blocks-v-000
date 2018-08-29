@@ -5,16 +5,15 @@ def hello_t(array)
     while i < array.length
     yield array[i]
     i = i + 1 
-  
+    end
     array
-    end 
   
   else
     puts "Hey! No block was given!"
   end 
 end
 
-hello_t
+hello_t(["Tim", "Bobbill", "Tarantula"])
 
 
 
