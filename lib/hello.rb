@@ -1,6 +1,10 @@
-def hello_t
-
+def hello_t(names)
+  if block_given?
+    names.each do |name|
+      yield(name)
+    end
+  else
+    puts "Hey! No block was given!"
+  end
+  names
 end
-
-# call your method here!
-
